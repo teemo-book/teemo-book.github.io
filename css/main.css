@@ -8,7 +8,7 @@ body {
   font-family: 'Roboto Slab', serif;
   line-height: 2.5rem;
   background: #263238;
-  font-size: 2rem;
+  font-size: 1.5rem;
   width: 55rem;
   color: #ffffff;
 }
@@ -34,6 +34,7 @@ body {
 
 #header-text {
   font-size: 2.4rem;
+  color: white;
 }
 
 #typing-area {

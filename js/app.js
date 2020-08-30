@@ -26,7 +26,8 @@ function fetchBook() {
             $("#champ-dropdown").select2({
                 data: dropDown,
                 width: 400,
-                templateResult: formatState
+                templateResult: formatState,
+                placeholder: "Search"
             })
         })
         .catch(err => console.error(err));
@@ -42,7 +43,7 @@ function formatState(state) {
     }
     var baseUrl = "https://cdn.communitydragon.org/latest/champion";
     var $state = $(
-        '<span><img src="' + baseUrl + '/' + champName  + '/square.png" class="img-flag" /> ' + state.text + '</span>'
+        '<span><img height="50" src="' + baseUrl + '/' + champName  + '/square.png" class="img-flag" /> ' + state.text + '</span>'
     );
     return $state;
 };
@@ -125,18 +126,18 @@ function formatHtml(bookEntry) {
         $formatted.append(bootsHtml);
     }
 
-    //sums
-    if (bookEntry['Summoner Spells']) {
-        var ss = bookEntry['Summoner Spells'].split(',');
-        var ssHtml = $(
-            '<div>Sums:</div>'
-        );
-        ssHtml.append($('<img src="' + sumsUrl + '/Flash.png" class="img-flag" />'));
-        ss.forEach(element => {
-            ssHtml.append($('<img src="' + sumsUrl + '/' + element + '.png" class="img-flag" />'));
-        });
-        $formatted.append(ssHtml);
-    }
+    // //sums
+    // if (bookEntry['Summoner Spells']) {
+    //     var ss = bookEntry['Summoner Spells'].split(',');
+    //     var ssHtml = $(
+    //         '<div>Sums:</div>'
+    //     );
+    //     ssHtml.append($('<img src="' + sumsUrl + '/Flash.png" class="img-flag" />'));
+    //     ss.forEach(element => {
+    //         ssHtml.append($('<img src="' + sumsUrl + '/' + element + '.png" class="img-flag" />'));
+    //     });
+    //     $formatted.append(ssHtml);
+    // }
 
 
     return $formatted;
