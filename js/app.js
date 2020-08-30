@@ -66,16 +66,40 @@ function formatHtml(bookEntry) {
     $formatted.append(portraitHtml);
 
     //runes
+    var $runeHtml = $(
+        '<div>Runes:</div>'
+    );
     if (bookEntry['Rune 1v1']){
         var runes = bookEntry['Rune 1v1'].split(',');
-        var runeHtml = $(
-            '<div>Runes:</div>'
+        var rune11Html = $(
+            '<div>1v1:</div>'
         );
         runes.forEach(element => {
-            runeHtml.append($('<img height="100" src="' + runesUrl + '/' + element + '.png" class="img-flag" />'));
+            rune11Html.append($('<img height="75" src="' + runesUrl + '/' + element + '.png" class="img-flag" />'));
         });
-        $formatted.append(runeHtml);
+        $runeHtml.append(rune11Html);
     }
+    if (bookEntry['Rune vs Burst JG']) {
+        var runes = bookEntry['Rune vs Burst JG'].split(',');
+        var runebjgHtml = $(
+            '<div>vs Burst JG:</div>'
+        );
+        runes.forEach(element => {
+            runebjgHtml.append($('<img height="75" src="' + runesUrl + '/' + element + '.png" class="img-flag" />'));
+        });
+        $runeHtml.append(runebjgHtml);
+    }
+    if (bookEntry['Runes vs MS JG']) {
+        var runes = bookEntry['Runes vs MS JG'].split(',');
+        var runemsjgHtml = $(
+            '<div>vs MS JG:</div>'
+        );
+        runes.forEach(element => {
+            runemsjgHtml.append($('<img height="75" src="' + runesUrl + '/' + element + '.png" class="img-flag" />'));
+        });
+        $runeHtml.append(runemsjgHtml);
+    }
+    $formatted.append($runeHtml);
 
     //items
     if (bookEntry['1st Core item']){
@@ -84,7 +108,7 @@ function formatHtml(bookEntry) {
             '<div>1st Item:</div>'
         );
         items.forEach(element => {
-            itemsHtml.append($('<img height="100" src="' + itemsUrl + '/' + element + '.png" class="img-flag" />'));
+            itemsHtml.append($('<img height="75" src="' + itemsUrl + '/' + element + '.png" class="img-flag" />'));
         });
         $formatted.append(itemsHtml);
     }
