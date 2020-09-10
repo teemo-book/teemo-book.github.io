@@ -25,7 +25,7 @@ function fetchBook() {
             });
             $("#champ-dropdown").select2({
                 data: dropDown,
-                width: 400,
+                width: 300,
                 templateResult: formatState,
                 placeholder: "Search"
             })
@@ -73,31 +73,43 @@ function formatHtml(bookEntry) {
     if (bookEntry['Rune 1v1']){
         var runes = bookEntry['Rune 1v1'].split(',');
         var rune11Html = $(
-            '<div>1v1:</div>'
+            '<div class="book-row">1v1:</div>'
+        );
+        var rune11Span = $(
+            '<span class="item-icons"></span>'
         );
         runes.forEach(element => {
-            rune11Html.append($('<img height="75" src="' + runesUrl + '/' + element + '.png" class="img-flag" />'));
+            rune11Span.append($('<img height="75" src="' + runesUrl + '/' + element + '.png" class="img-flag" />'));
         });
+        rune11Html.append(rune11Span);
         $runeHtml.append(rune11Html);
     }
     if (bookEntry['Rune vs Burst JG']) {
         var runes = bookEntry['Rune vs Burst JG'].split(',');
         var runebjgHtml = $(
-            '<div>vs Burst JG:</div>'
+            '<div class="book-row">vs Burst JG:</div>'
+        );
+        var runebjgSpan = $(
+            '<span class="item-icons"></span>'
         );
         runes.forEach(element => {
-            runebjgHtml.append($('<img height="75" src="' + runesUrl + '/' + element + '.png" class="img-flag" />'));
+            runebjgSpan.append($('<img height="75" src="' + runesUrl + '/' + element + '.png" class="img-flag" />'));
         });
+        runebjgHtml.append(runebjgSpan);
         $runeHtml.append(runebjgHtml);
     }
     if (bookEntry['Runes vs MS JG']) {
         var runes = bookEntry['Runes vs MS JG'].split(',');
         var runemsjgHtml = $(
-            '<div>vs MS JG:</div>'
+            '<div class="book-row">vs MS JG:</div>'
+        );
+        var runemsjgSpan = $(
+            '<span class="item-icons"></span>'
         );
         runes.forEach(element => {
-            runemsjgHtml.append($('<img height="75" src="' + runesUrl + '/' + element + '.png" class="img-flag" />'));
+            runemsjgSpan.append($('<img height="75" src="' + runesUrl + '/' + element + '.png" class="img-flag" />'));
         });
+        runemsjgHtml.append(runemsjgSpan);
         $runeHtml.append(runemsjgHtml);
     }
     $formatted.append($runeHtml);
@@ -106,11 +118,15 @@ function formatHtml(bookEntry) {
     if (bookEntry['1st Core item']){
         var items = bookEntry['1st Core item'].split(',');
         var itemsHtml = $(
-            '<div>1st Item:</div>'
+            '<div class="book-row">1st Item:</div>'
+        );
+        var itemSpan = $(
+            '<span class="item-icons"></span>'
         );
         items.forEach(element => {
-            itemsHtml.append($('<img height="75" src="' + itemsUrl + '/' + element + '.png" class="img-flag" />'));
+            itemSpan.append($('<img height="75" src="' + itemsUrl + '/' + element + '.png" class="img-flag" />'));
         });
+        itemsHtml.append(itemSpan);
         $formatted.append(itemsHtml);
     }
 
@@ -118,11 +134,15 @@ function formatHtml(bookEntry) {
     if (bookEntry['Boots']) {
         var boots = bookEntry['Boots'].split(',');
         var bootsHtml = $(
-            '<div>Boot Choices:</div>'
+            '<div class="book-row">Boot Choices:</div>'
+        );
+        var bootSpan = $(
+            '<span class="item-icons"></span>'
         );
         boots.forEach(element => {
-            bootsHtml.append($('<img src="' + itemsUrl + '/' + element + '.png" class="img-flag" />'));
+            bootSpan.append($('<img src="' + itemsUrl + '/' + element + '.png" class="img-flag" />'));
         });
+        bootsHtml.append(bootSpan);
         $formatted.append(bootsHtml);
     }
 
