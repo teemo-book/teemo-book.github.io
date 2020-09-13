@@ -1,3 +1,7 @@
+html {
+  background-image: url('../assets/taimo.jpg');
+  background-position: center;
+}
 body {
   margin: auto;
   min-height: 100vh;
@@ -10,8 +14,7 @@ body {
   background: #263238;
   font-size: 1.5rem;
   color: #ffffff;
-  background-image: url('../assets/taimo.jpg');
-  background-position: center;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 *[onclick] {
@@ -39,7 +42,6 @@ body {
 }
 
 #guide {
-  background-color: rgba(0, 0, 0, 0.5);
   padding: 10px;
 }
 
