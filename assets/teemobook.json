@@ -100,7 +100,7 @@
     "Difficulty": "Okay"
   },
   {
-    "Champion": "Fiddlestick",
+    "Champion": "Fiddlesticks",
     "Aggressive": "SummonAery,Domination",
     "Passive": "GraspOfTheUndying",
     "Boots": "Mercurys",
@@ -270,7 +270,7 @@
     "Difficulty": "Decent"
   },
   {
-    "Champion": "KasSummonAery,din",
+    "Champion": "Kassadin",
     "Aggressive": "HailOfBlades,Resolve",
     "Passive": "GraspOfTheUndying",
     "Boots": "Sorcerers",
@@ -330,7 +330,7 @@
     "Difficulty": "Decent"
   },
   {
-    "Champion": "LisSummonAery,ndra",
+    "Champion": "Lissandra",
     "Aggressive": "SummonAery,Domination",
     "Passive": "SummonAery,GraspOfTheUndying",
     "Boots": "Mercurys",
